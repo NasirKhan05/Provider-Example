@@ -6,6 +6,7 @@ import 'package:provider_example/provider/theme_changer_provider.dart';
 import 'package:provider_example/screen/count_example.dart';
 import 'package:provider_example/screen/dark_theme.dart';
 import 'package:provider_example/screen/example_one.dart';
+import 'package:provider_example/screen/notify_listner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
                 foregroundColor: Colors.white
               )
             ),
-            home: DarkTheme(),
+            home: NotifyListner(),
           );
         }));
   }
