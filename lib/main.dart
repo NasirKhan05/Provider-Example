@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_example/provider/auth_provider.dart';
 import 'package:provider_example/provider/count_provider.dart';
 import 'package:provider_example/provider/example_one_provider.dart';
 import 'package:provider_example/provider/theme_changer_provider.dart';
 import 'package:provider_example/screen/count_example.dart';
 import 'package:provider_example/screen/dark_theme.dart';
 import 'package:provider_example/screen/example_one.dart';
+import 'package:provider_example/screen/log_in.dart';
 import 'package:provider_example/screen/notify_listner.dart';
 
 void main() {
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => CountProvider()),
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => ThemeChanger()),
+          ChangeNotifierProvider(create: (_) => AuthProvider()),
         ],
         child: Builder(builder: (BuildContext context) {
           final themeChanger = Provider.of<ThemeChanger>(context);
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
                 foregroundColor: Colors.white
               )
             ),
-            home: NotifyListner(),
+            home: LogIn(),
           );
         }));
   }
